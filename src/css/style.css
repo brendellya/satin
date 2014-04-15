@@ -4412,9 +4412,6 @@ pre code {
 }
 .aside_satin section .blog_logo {
   margin-bottom: 1em;
-  zoom: 1;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
 }
 .aside_satin section .blog_logo img {
   margin: auto;

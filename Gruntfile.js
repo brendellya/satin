@@ -18,7 +18,7 @@ module.exports = function(grunt){
     concat: {
       css: {
         src: ['bower_components/icomoon/style.css', 'src/css/*.css'],
-        dest: '<%= ghostPath %>/<%= cssDest %>'
+        dest: '<%= cssDest %>'
       }
     },
 
