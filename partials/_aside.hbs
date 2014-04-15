@@ -1,0 +1,13 @@
+<aside role="banner" class="aside_satin">
+    <section>
+    {{#if @blog.logo}}
+      <div class="blog_logo"><a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a></div>
+    {{/if}}
+      <h2 class="blog_title"><a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a></h2>
+      <p class="blog_descript">{{@blog.description}}</p>
+      <nav role="navigation" class="nav">
+          <a href="http://www.twitter.com/brendellya">Twitter</a>
+          <a href="http://www.linkedin.com/in/brendellya">LinkedIn</a>
+      </nav>
+    </section>
+</aside>

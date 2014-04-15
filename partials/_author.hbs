@@ -1,0 +1,38 @@
+<aside role="banner" class="author_satin">
+
+  <div class="meta">
+      {{#if author}}
+      <div class="author_meta">
+            {{#if author.image}}
+              <div class="author_img"><a href="{{@blog.url}}"><img src="{{author.image}}" /></a></div>
+            {{/if}}
+          <div class="author_detail">
+            <h4 class="author_name"><a href="{{@blog.url}}">{{author.name}}</a></h4>
+            <div class="author_bio"><p>{{author.bio}}</p></div>
+            {{#if author.website}}
+              <div class="author_site"><a href="{{author.website}}">{{author.website}}</a></div>
+            {{/if}}
+          </div>
+      </div>
+      {{/if}}
+
+      <div class="post_meta">
+           <time class="post_date" datetime="{{date format='MMM DD, YYYY'}}" itemprop="datePublished">
+              {{date format='MMM DD, YYYY'}}
+          </time>
+        {{#if tags}}
+          <div class="tags">
+          {{#foreach tags}}
+            <p><a href="/tag/{{slug}}"><i class="icon-tag"></i>{{name}}</a></p>
+          {{/foreach}}
+          </div>
+        {{/if}}
+      </div>
+  </div>
+
+
+<div class="postfoot_satin"><a href="http://www.brendellya.com" class="icon-ghost"><i class="icon-paragraph-justify-2"></i>&nbsp;Back To Overview</a></div>
+{{> _footer}}
+
+</aside>
+

@@ -1,0 +1,26 @@
+{
+  "name": "satin",
+  "version": "0.0.1",
+  "authors": [
+    "Brendellya <dev@dynastygraphics.com>"
+  ],
+  "description": "A simple Ghost theme.",
+  "main": "index.hbs",
+  "keywords": [
+    "ghost",
+    "theme",
+    "satin",
+    "blog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "icomoon": "~0.0.1"
+  }
+}

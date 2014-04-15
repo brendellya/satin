@@ -1,0 +1,37 @@
+{{!< default}}
+
+{{#post}}
+{{> _author}}
+
+<main class="main_satin post_detail" role="main">
+
+  <article class="post_article" role="article" itemscope="http://schema.org/Article">
+      <header class="post_header">
+          <h1 class="post_title" itemprop="headline">{{title}}</h1>
+      </header>
+
+      <div class="post_content" itemprop="articleBody">
+        {{{content}}}
+      </div>
+
+      <div class="post_share">
+          <p class="share_cta">Share this post</p>
+          <div class="links">
+          <a class="share_magnum  btn" target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}">
+          <i class="icon-twitter-3"></i>Twitter</a>
+          <a class="share_magnum  btn" target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}">
+          <i class="icon-facebook-3"></i>Facebook</a>
+          <a class="share_magnum  btn" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}">
+          <i class="icon-google-plus-4"></i>Google+</a>
+          </div>
+      </div>
+  </article>
+
+<div class="postfoot_satin"><a href="http://www.brendellya.com" class="icon-ghost"><i class="icon-paragraph-justify-2"></i>&nbsp;Back To Overview</a></div>
+{{> _footer}}
+
+</main>
+
+{{/post}}
+
+

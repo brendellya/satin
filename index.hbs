@@ -1,0 +1,43 @@
+{{!< default}}
+{{> _aside}}
+
+<main class="main_satin" role="main">
+
+{{! Post List }}
+{{#foreach posts}}
+
+  {{! Post }}
+  <article class="post_article" role="article" itemscope itemtype="http://schema.org/Article">
+    <header class="post_header">
+      <time class="post_date" datetime="{{date format='dddd MMM DD, YYYY'}}" itemprop="datePublished">
+          {{date format='dddd MMM DD, YYYY'}}
+      </time>
+      <h1 class="post_title" itemprop="headline"><a href="{{url}}" rel="bookmark">{{title}}</a></h1>
+    </header>
+
+  <div class="post_content" itemprop="articleBody">{{excerpt}}...</div>
+  <!-- <p><a href="{{url}}" class="post_more">Read More</a></p> -->
+
+  {{#if tags}}
+    <div class="post_tags">
+      <i class="icon-tags"></i>
+      {{#foreach tags}}
+        <a href="/tag/{{slug}}">{{name}}</a>{{#unless @last}}, {{/unless}}
+      {{/foreach}}
+    </div>
+  {{/if}}
+  </article>
+
+{{/foreach}}
+
+{{! Pagination }}
+{{#if pagination}}
+  <div class="pagination_satin">
+    {{pagination}}
+  </div>
+{{/if}}
+
+{{> _footer}}
+</main>
+
+
