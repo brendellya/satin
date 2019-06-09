@@ -1,0 +1,393 @@
+
+@import "_reset";
+@import "_typography";
+@import "_variables";
+@import "_mixins";
+@import "_default";
+
+html, body { width: 100%; height: 100%; }
+body { margin: 0; background: @bodyBG; color: @bodyColor; font-size: 100%; font-family: @defaultFont; }
+
+* { .box-sizing(); } /* Border-box on all elements */
+a { color: @linkColor; text-decoration: none; }
+a:hover { color: @linkHoverColor; }
+i[class^="icon-"] { margin-right: 5px; }
+
+h1 { font-size: @h1+ 0em; line-height: 2em; }
+h2 { font-size: @h2+ 0em; line-height: 1.75em; }
+h3 { font-size: @h3+ 0em; line-height: 1.5em; }
+h4 { font-size: @h4+ 0em; line-height: 1.25em; }
+h5 { font-size: @h5+ 0em; line-height: 1em; }
+h6 { font-size: @h6+ 0em; line-height: 1em; }
+
+p { margin: 1em 0; }
+
+blockquote {
+	margin: 2% 5%;
+	padding: 1% 2%;
+	font-style: oblique;
+	border-left: 10px solid @gray10;
+
+	p { margin: 2px 0; }
+	small { }
+	cite { font-weight: bold; }
+}
+
+pre {
+	margin: 2% 0;
+	padding: 1% 2%;
+	max-width: 100%;
+	background: @gray01;
+	border: 1px dashed @gray30;
+
+	code {
+		white-space: pre-wrap;
+		background: transparent;
+		border: none;
+	}
+}
+
+
+
+/*
+	GHOST BLOG
+*/
+.wrapper_bthomas{
+	margin: 0;
+	padding: 0;
+	background: @white;
+	font-family: @defaultFont;
+}
+
+/*
+	ASIDE COLUMNS
+*/
+.aside_bthomas{
+	width: 25%;
+	height: 100%;
+	float: left;
+	position: fixed;
+	color: @white;
+	background: @black;
+
+	section {
+		padding: 0 1em;
+		width: 100%;
+		position: absolute;
+		bottom: 10%;
+		font-family: @headerFont;
+		text-align: center;
+
+		.blog_logo {
+			margin-bottom: 1em;
+			.opacity(0.5);
+
+			img {
+				margin: auto;
+				display: block;
+			}
+		}
+
+		.blog_title {
+			font-size: @h3 + 0em;
+			line-height: 1.5em;
+
+			a { color: @white; }
+		}
+		.blog_descript {
+			margin: 0;
+			font-size: .9em;
+			line-height: 1.5em;
+		}
+
+	}
+	.nav {
+		margin-top: 1em;
+		text-align: center;
+
+		a {
+			margin: 0 4px;
+			font-size: @h6 + 0em;
+			line-height: 2em;
+			color: @gray30;
+			text-decoration: none;
+		}
+	}
+
+}
+.author_bthomas {
+	padding: 0 2% 0 0;
+	width: 25%;
+	height: 100%;
+	float: left;
+	position: fixed;
+	text-align: right;
+
+	.author_img {
+		margin-top: 100px;
+
+		img { .border-radius(100%); }
+	}
+	.author_name {
+		margin-top: 1em;
+		font: 1em/1.5em @headerFont;
+		color: @black;
+	}
+	.author_bio {
+		padding: 0 0 0 40%;
+		font: normal .8em/1.5em @defaultFont;
+		color: @gray70;
+
+		@media only screen and (min-width: 768px) and (max-width: 1000px) { padding: 0 0 0 10%; }
+		@media only screen and (max-width: 768px) { padding: 0; }
+	}
+
+	.author_site {
+		font: normal .85em/1.5em @defaultFont;
+		font-style: italic;
+		color: @gray50;
+	}
+
+	time {
+		margin: 30px 0 0;
+		padding: .75em 0;
+		display: inline-block;
+		font-size: 0.9em;
+		font-weight: bold;
+		text-transform: uppercase;
+		border-top: 2px solid #000000;
+	}
+
+	.tags{
+		font: normal .6em/1.25em @defaultFont;
+		text-transform: uppercase;
+
+		a { display: block; border: none; }
+	}
+	.postfoot_bthomas,
+	.footer_bthomas {
+		display: none;
+	}
+}
+
+/*
+	MAIN INDEX / POST STYLES
+*/
+.main_bthomas {
+	margin: 0 0 0 27%;
+	padding: 20px 0;
+	width: 72%;
+	float: left;
+	font-family: @defaultFont;
+	line-height: @goldenEm;
+
+	.post_article {
+		margin: 10px 5% 50px 0;
+
+		ul, ol { margin: 0 2.5em; }
+		h2, h3, h4, h5, h6 { margin: 1em 0; }
+
+		a { border-bottom: 1px dashed @gray70; }
+	}
+	.post_date {
+		display: block;
+		font-size: .75em;
+		color: @gray50;
+	}
+	.post_header .post_tags {
+		margin-bottom: 20px;
+	}
+	.post_title {
+		font: 2.25em/1.6em @headerFont;
+		a { color: @black; border: none; }
+		a:hover { color: @linkHoverColor; }
+	}
+	.post_content {
+		font-size: 1em;
+		line-height: @goldenEm;
+
+		img { margin: @goldenEm auto; display: block; max-width: 100%; }
+	}
+	.post_more {
+		font: normal .6em/1em @defaultFont;
+		color: @gray30;
+		text-transform: uppercase;
+	}
+	.post_tags{
+		margin: 15px 0 0 0;
+		font: normal .6em/1em @defaultFont;
+		text-transform: uppercase;
+
+		a { border: none; }
+	}
+
+	.post_share {
+		margin-top: 2em;
+		padding: 1em 0;
+		text-align: center;
+		border-top: 1px solid @gray10;
+		border-bottom: 1px solid @gray10;
+		.box-clearfix();
+
+		.share_cta {
+			margin: 0 1em;
+			display: block;
+			font-size: .75em;
+			text-transform: uppercase;
+		}
+
+		.links {
+			display: inline;
+
+			a { margin: 0 .5em; font-size: 1em; border: none; }
+		}
+	}
+
+	.pagination_bthomas {
+		margin-top: 25px;
+		padding: 20px 0;
+		width: 100%;
+		text-align: center;
+		position: relative;
+		.box-clearfix();
+
+		span { margin: 0 auto; width: 33%; text-align: center; }
+		.newer-posts { position: absolute; left: 0; }
+		.older-posts { position: absolute; right: 0; }
+	}
+}
+
+	.postfoot_bthomas {
+		margin-top: 25px;
+		padding: 20px 0;
+		text-align: center;
+		clear: both;
+	}
+
+.footer_bthomas {
+	padding: 20px 0;
+	clear: both;
+	font: normal .75em/1.5em @defaultFont;
+	color: @gray70;
+	text-align: center;
+	border-top: 1px solid black;
+
+	a { text-transform: uppercase; }
+}
+
+/*
+	Media Query
+	Shifts Asides to Header/Footer position on smaller screens
+*/
+@media screen and (max-width: @midPoint){
+	.wrapper_bthomas { display: table; }
+
+	.aside_bthomas {
+		width: 100%;
+		float: none;
+		display: table-header-group;
+		position: static;
+
+		section {
+			margin: 2em 0;
+			padding: 0 1em;
+			width: 100%;
+			position: static;
+		}
+	}
+	.author_bthomas {
+		margin: 0 auto;
+		width: 90%;
+		height: 400px;
+		float: none;
+		display: table-footer-group;
+		position: static;
+		text-align: left;
+
+
+		.meta {
+			margin: 0 auto;
+			padding: 2em 0 0 0;
+			width: 90%;
+			border-top: 1px solid @gray50;
+			.box-clearfix();
+		}
+
+		.author_meta {
+			margin: 0;
+			padding: 0 0 0 2em;
+			width: 68%;
+			float: right;
+			border-left: 1px solid @gray50;
+		}
+		.author_img {
+			margin: 0 1em 0 0;
+			width: 80px;
+			float: left;
+		}
+		.author_detail {
+			float: left;
+			width: 65%;
+		}
+		.author_name {
+			margin-top: .5em;
+			line-height: 1em;
+		}
+		.author_bio {
+			margin-right: 2em;
+			padding: 0;
+
+			p { margin: .5em 0; }
+		}
+		.author_site {
+			font-size: .8em;
+		}
+
+		.post_meta {
+			margin: 0;
+			padding: 0;
+			width: 30%;
+			float: left;
+			text-align: right;
+		}
+		time {
+			margin: 0 0 0;
+			padding: .75em 0;
+			display: inline-block;
+			font-size: 0.9em;
+			font-weight: bold;
+			text-transform: uppercase;
+			border: none;
+		}
+		.tags{
+			font: normal .6em/1.25em @defaultFont;
+			text-transform: uppercase;
+
+			a { display: block; border: none; }
+		}
+
+		.postfoot_bthomas,
+		.footer_bthomas {
+			display: block;
+		}
+	}
+
+	.main_bthomas {
+		margin: 0 auto;
+		padding-bottom: 0;
+		width: 100%;
+		float: none;
+
+		.post_article { margin: 0 auto 50px auto; width: 90%; }
+		img { width: 100%; }
+	}
+
+	.post_detail {
+		.postfoot_bthomas,
+		.footer_bthomas {
+			display: none;
+		}
+	}
+
+
+}
